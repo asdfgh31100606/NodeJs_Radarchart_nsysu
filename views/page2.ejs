@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <title>主題二測驗</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-radar.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+    <div>
+        <h1>主題二</h1>
+        <p>Design by Marshall @ NSYSUMIS</p>
+        <p class="notice" style="color:red"><b>完成填答後請先按下產生雷達圖再進行下一項測驗</b></p>
+    </div>
+    <div class="dimension-container">
+        <div class="dimension1">
+            <!--每個面相有幾個問題，每個問題的回答選項都有分數。面相會是所有回答選項計算出來的平均值-->
+            <h2>面向 1: </h2>
+            <h4>問題 1:</h4>
+            <input type="radio" name="question1_1" value="20"> Answer1_1
+            <input type="radio" name="question1_1" value="40"> Answer1_2
+            <input type="radio" name="question1_1" value="60"> Answer1_3
+            <h4>問題 2:</h4>
+            <input type="radio" name="question1_2" value="20"> Answer2_1
+            <input type="radio" name="question1_2" value="40"> Answer2_2
+            <input type="radio" name="question1_2" value="60"> Answer2_3
+            <h4>問題 3:</h4>
+            <input type="radio" name="question1_3" value="20"> Answer3_1
+            <input type="radio" name="question1_3" value="40"> Answer3_2
+            <input type="radio" name="question1_3" value="60"> Answer3_3
+        </div>
+        <div class="dimension2">
+            <h2>面向 2: </h2>
+            <h4>問題 1:</h4>
+            <input type="radio" name="question2_1" value="20"> Answer2_1
+            <input type="radio" name="question2_1" value="40"> Answer2_2
+            <input type="radio" name="question2_1" value="60"> Answer2_3
+            <h4>問題 2:</h4>
+            <input type="radio" name="question2_2" value="20"> Answer2_1
+            <input type="radio" name="question2_2" value="40"> Answer2_2
+            <input type="radio" name="question2_2" value="60"> Answer2_3
+            <h4>問題 3:</h4>
+            <input type="radio" name="question2_3" value="20"> Answer2_3
+            <input type="radio" name="question2_3" value="40"> Answer2_3
+            <input type="radio" name="question2_3" value="60"> Answer3_3
+        </div>
+        <div class="dimension3">
+            <h2>面向 3: </h2>
+            <h4>問題 1:</h4>
+            <input type="radio" name="question3_1" value="20"> Answer3_1
+            <input type="radio" name="question3_1" value="40"> Answer4_2
+            <input type="radio" name="question3_1" value="60"> Answer14_3
+            <h4>問題 2:</h4>
+            <input type="radio" name="question3_2" value="20"> Answer2_1
+            <input type="radio" name="question3_2" value="40"> Answer2_2
+            <input type="radio" name="question3_2" value="60"> Answer2_3
+            <h4>問題 3:</h4>
+            <input type="radio" name="question3_3" value="20"> Answer3_1
+            <input type="radio" name="question3_3" value="40"> Answer3_2
+            <input type="radio" name="question3_3" value="60"> Answer3_3
+        </div>
+        <div class="dimension4">
+            <h2>面向 4: </h2>
+            <h4>問題 1:</h4>
+            <input type="radio" name="question4_1" value="20"> Answer1_1
+            <input type="radio" name="question4_1" value="40"> Answer1_2
+            <input type="radio" name="question4_1" value="60"> Answer1_3
+            <h4>問題 2:</h4>
+            <input type="radio" name="question4_2" value="20"> Answer2_1
+            <input type="radio" name="question4_2" value="40"> Answer2_2
+            <input type="radio" name="question4_2" value="60"> Answer2_3
+            <h4>問題 3:</h4>
+            <input type="radio" name="question4_3" value="20"> Answer3_1
+            <input type="radio" name="question4_3" value="40"> Answer3_2
+            <input type="radio" name="question4_3" value="60"> Answer3_3
+        </div>
+        <div class="dimension5">
+            <h2>面向 5: </h2>
+            <h4>問題 1:</h4>
+            <input type="radio" name="question5_1" value="20"> Answer1_1
+            <input type="radio" name="question5_1" value="40"> Answer1_2
+            <input type="radio" name="question5_1" value="60"> Answer1_3
+            <h4>問題 2:</h4>
+            <input type="radio" name="question5_2" value="20"> Answer2_1
+            <input type="radio" name="question5_2" value="40"> Answer2_2
+            <input type="radio" name="question5_2" value="60"> Answer2_3
+            <h4>問題 3:</h4>
+            <input type="radio" name="question5_3" value="20"> Answer3_1
+            <input type="radio" name="question5_3" value="40"> Answer3_2
+            <input type="radio" name="question5_3" value="60"> Answer3_3
+
+        </div>
+
+    </div>
+
+
+    <div class="button-group">
+        <a target="_blank" rel="noopener noreferrer" href="/result" class="btn btn btn-primary" id="MyButton">產出雷達圖</a>
+        <button class="btn btn-secondary" type="button" onClick="window.location.reload();">重新產生雷達圖</button>
+    </div>
+
+
+    <div id="container"></div>
+
+</body>
+
+</html>
+
+<script>
+    let result = document.getElementById("result");
+    const MyButton = document.getElementById('MyButton');
+    const RefreshButton = document.getElementById('RefreshButton');
+    let avg1, avg2, avg3, avg4, avg5;
+
+    let radioGroup1_1 = document.querySelectorAll
+        ("input[name='question1_1']");
+    let radioGroup1_2 = document.querySelectorAll
+        ("input[name='question1_2']");
+    let radioGroup1_3 = document.querySelectorAll
+        ("input[name='question1_3']");
+
+    let radioGroup2_1 = document.querySelectorAll
+        ("input[name='question2_1']");
+    let radioGroup2_2 = document.querySelectorAll
+        ("input[name='question2_2']");
+    let radioGroup2_3 = document.querySelectorAll
+        ("input[name='question2_3']");
+
+    let radioGroup3_1 = document.querySelectorAll
+        ("input[name='question3_1']");
+    let radioGroup3_2 = document.querySelectorAll
+        ("input[name='question3_2']");
+    let radioGroup3_3 = document.querySelectorAll
+        ("input[name='question3_3']");
+
+    let radioGroup4_1 = document.querySelectorAll
+        ("input[name='question4_1']");
+    let radioGroup4_2 = document.querySelectorAll
+        ("input[name='question4_2']");
+    let radioGroup4_3 = document.querySelectorAll
+        ("input[name='question4_3']");
+
+    let radioGroup5_1 = document.querySelectorAll
+        ("input[name='question5_1']");
+    let radioGroup5_2 = document.querySelectorAll
+        ("input[name='question5_2']");
+    let radioGroup5_3 = document.querySelectorAll
+        ("input[name='question5_3']");
+
+    //Add on click listener for button
+    MyButton.addEventListener('click', function () {
+
+        let selected1_1 = parseInt(document.querySelector
+            ("input[name='question1_1']:checked").value);
+        let selected1_2 = parseInt(document.querySelector
+            ("input[name='question1_2']:checked").value);
+        let selected1_3 = parseInt(document.querySelector
+            ("input[name='question1_3']:checked").value);
+
+        let selected2_1 = parseInt(document.querySelector
+            ("input[name='question2_1']:checked").value);
+        let selected2_2 = parseInt(document.querySelector
+            ("input[name='question2_2']:checked").value);
+        let selected2_3 = parseInt(document.querySelector
+            ("input[name='question2_3']:checked").value);
+
+        let selected3_1 = parseInt(document.querySelector
+            ("input[name='question3_1']:checked").value);
+        let selected3_2 = parseInt(document.querySelector
+            ("input[name='question3_2']:checked").value);
+        let selected3_3 = parseInt(document.querySelector
+            ("input[name='question3_3']:checked").value);
+
+        let selected4_1 = parseInt(document.querySelector
+            ("input[name='question4_1']:checked").value);
+        let selected4_2 = parseInt(document.querySelector
+            ("input[name='question4_2']:checked").value);
+        let selected4_3 = parseInt(document.querySelector
+            ("input[name='question4_3']:checked").value);
+
+        let selected5_1 = parseInt(document.querySelector
+            ("input[name='question5_1']:checked").value);
+        let selected5_2 = parseInt(document.querySelector
+            ("input[name='question5_2']:checked").value);
+        let selected5_3 = parseInt(document.querySelector
+            ("input[name='question5_3']:checked").value);
+        avg1 = parseInt((selected1_1 + selected1_2 + selected1_3) / 3);
+        avg2 = parseInt((selected2_1 + selected2_2 + selected2_3) / 3);
+        avg3 = parseInt((selected3_1 + selected3_2 + selected3_3) / 3);
+        avg4 = parseInt((selected4_1 + selected4_2 + selected4_3) / 3);
+        avg5 = parseInt((selected5_1 + selected5_2 + selected5_3) / 3);
+        localStorage.setItem('page2_avg1', avg1);
+        localStorage.setItem('page2_avg2', avg2);
+        localStorage.setItem('page2_avg3', avg3);
+        localStorage.setItem('page2_avg4', avg4);
+        localStorage.setItem('page2_avg5', avg5);
+
+        //result.textContent = `Avg Score Here:${avg}` ;  
+        anychart.onDocumentReady(function () {
+            // our data from bulbapedia
+            var data1 = [
+                { x: "Dimension1", value: avg1 },
+                { x: "Dimension2", value: avg2 },
+                { x: "Dimension3", value: avg3 },
+                { x: "Dimension4 ", value: avg4 },
+                { x: "Dimension5 ", value: avg5 },
+
+            ];
+
+            // create radar chart
+            var chart = anychart.radar();
+            // set chart yScale settings
+            chart.yScale()
+                .minimum(10)
+                .maximum(60)
+                .ticks({ 'interval': 20 });
+
+            // create first series
+            chart.line(data1)
+            // create second series
+
+            chart.area(data1).name('主題一').markers(true).fill("#24aae3", 0.3).stroke("#E55934")
+            // set chart title
+            chart.title("主題一雷達圖");
+
+            // set container id for the chart
+            chart.container('container');
+            // initiate chart drawing
+            chart.draw();
+
+        });
+        MyButton.disabled = true;
+
+    })
+
+
+
+</script>

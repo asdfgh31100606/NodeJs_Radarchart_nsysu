@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <title>最終結果</title>
+    <link rel="stylesheet" href="result_page.css">
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-radar.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-exports.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+    <div>
+        <h1>雷達圖結果</h1>
+        <p>Design by Marshall @ NSYSUMIS
+    </div>
+
+
+
+    <div class="button-group">
+        <button class="btn btn btn-primary" type="button">儲存圖片</button>
+        <button class="btn btn-secondary" type="button">寄送結果</button>
+    </div>
+
+
+    <div id="container"></div>
+
+</body>
+
+</html>
+
+<script>
+    anychart.onDocumentReady(function () {
+        // our data from bulbapedia
+        var data1 = [
+            { x: "Dimension1", value: localStorage.getItem('page1_avg1') },
+            { x: "Dimension2", value: localStorage.getItem('page1_avg2') },
+            { x: "Dimension3", value: localStorage.getItem('page1_avg3') },
+            { x: "Dimension4 ", value: localStorage.getItem('page1_avg4') },
+            { x: "Dimension5 ", value: localStorage.getItem('page1_avg5') },
+
+        ];
+        var data2 = [
+            { x: "Dimension1", value: localStorage.getItem('page2_avg1') },
+            { x: "Dimension2", value: localStorage.getItem('page2_avg2') },
+            { x: "Dimension3", value: localStorage.getItem('page2_avg3') },
+            { x: "Dimension4 ", value: localStorage.getItem('page2_avg4') },
+            { x: "Dimension5 ", value: localStorage.getItem('page2_avg5') },
+
+        ];
+
+        // create radar chart
+        var chart = anychart.radar();
+        // set chart yScale settings
+        chart.yScale()
+            .minimum(10)
+            .maximum(60)
+            .ticks({ 'interval': 20 });
+
+        // create first series
+        chart.line(data1)
+        chart.line(data2)
+        // create second series
+
+        chart.area(data1).name('主題一').markers(true).fill("#24aae3", 0.3).stroke("#E55934")
+        chart.area(data2).name('主題二').markers(true).fill("#d9370b", 0.3).stroke("#E55934")
+        // set chart title
+        chart.title("主題一、二結果雷達圖");
+
+        // set container id for the chart
+        chart.container('container');
+        // initiate chart drawing
+        chart.draw();
+
+    });
+
+</script>
