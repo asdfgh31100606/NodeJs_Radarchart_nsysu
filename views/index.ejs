@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
     <title>主題一測驗</title>
     <link rel="stylesheet" href="style.css">
@@ -95,16 +94,31 @@
             <input type="radio" name="question5_3" value="40"> Answer3_2
             <input type="radio" name="question5_3" value="60"> Answer3_3
 
+            <div>
+                <form action='/' method='post'>
+                <p>
+                <h4>面向 1 平均:</h4><em id="avg1" ></em></p>
+                <p>
+                <h4>面向 2 平均:</h4><em id="avg2" ></em></p>
+                <p>
+                <h4>面向 3 平均:</h4><em id="avg3" ></em></p>
+                <p>
+                <h4>面向 4 平均:</h4><em id="avg4" ></em></p>
+                <p>
+                <h4>面向 5 平均:</h4><em id="avg5" ></em></p>
+                </form>
+            </div>
         </div>
+
 
     </div>
 
 
     <div class="button-group">
-        <button class="btn btn btn-primary" type="button" id="MyButton">產出雷達圖</button>
+        <button class="btn btn btn-primary" type="submit" id="MyButton">產出雷達圖</button>
         <button class="btn btn-secondary" type="button" onClick="window.location.reload();">重新產生雷達圖</button>
-        <a target="_blank" rel="noopener noreferrer" href="/page2" class="btn btn btn-dark" id="button">下一個測驗</a>
-        
+        <a rel="noopener noreferrer" href="/page2" class="btn btn btn-dark" id="button">下一個測驗</a>
+
     </div>
 
 
@@ -195,7 +209,13 @@
         avg3 = parseInt((selected3_1 + selected3_2 + selected3_3) / 3);
         avg4 = parseInt((selected4_1 + selected4_2 + selected4_3) / 3);
         avg5 = parseInt((selected5_1 + selected5_2 + selected5_3) / 3);
-        
+
+        document.getElementById('avg1').textContent = avg1;
+        document.getElementById('avg2').textContent = avg2;
+        document.getElementById('avg3').textContent = avg3;
+        document.getElementById('avg4').textContent = avg4;
+        document.getElementById('avg5').textContent = avg5;
+
         localStorage.setItem('page1_avg1', avg1);
         localStorage.setItem('page1_avg2', avg2);
         localStorage.setItem('page1_avg3', avg3);
